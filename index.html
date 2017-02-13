@@ -49,7 +49,7 @@
 <div>
 	<table class="table table-bordered">
 	<tr>
-		<td class="choice"></td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td class="chkbx"><input type="checkbox" onclick="return false"></td><td class="score">Human</td><td class="chkbx"><input type="checkbox" onclick="return false"></td><td class="score">AI</td>
+		<td class="choice"></td><td class="chkbx"><input type="checkbox" id="chk10" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk20" onclick="return false"></td><td class="score">Human</td><td class="chkbx"><input type="checkbox" id="chkAI0" onclick="return false"></td><td class="score">AI</td>
 	</tr>
 	<tr>
 		<td class="choice">ONE</td><td class="chkbx"><input type="checkbox" id="chk1one" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2one" /></td><td id="scoreone" class="score">0</td><td class="chkbx"><input type="checkbox" id="chkAIone" onclick="return false" /></td><td id="scoreAIone" class="score">0</td>
@@ -194,7 +194,9 @@ $(document).ready(function () {
 	$("#dicescore").css("color", "red");
 	$("#dicescore").prop("disabled", true);
 	$("#choosen_categories").html("false,false,false,false,false,false,false,false,false,false,false,false,false");
+	$("[id^=chk1]").prop("disabled", true);
 	$("[id^=chk2]").prop("disabled", true);
+	$("[id^=chkAI]").prop("disabled", true);
 	$("[id^=chk1]").prop("checked", false);
 	$("input[type='checkbox']").change(function() {
 		if ($(this).is(":checked")) {
