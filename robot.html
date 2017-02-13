@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Yahtzee</title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/hashmap.min.js"></script>
+<script type="text/javascript" src="js/sinon-1.17.2.js"></script>
+<link href="css/yahtzee.css" type="text/css" rel="stylesheet" media="screen, projection" />
+<link href="css/robotmenu.css" type="text/css" rel="stylesheet" media="screen, projection" />
+</head>
+<body>
+<nav id="navrobot"></nav>
+<h1>Yahtzee Robot</h1>
+<p id="__results">Keep rolling.</p>
+<script type="text/javascript" src="js/d6.js"></script>
+<script type="text/javascript" src="js/robot.js"></script>
+<script type="text/javascript" src="robot.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("#dicebutton").css("color", "green");
+	$(".diceGroup h4").text("Robot");
+	$("#score").hide();
+});
+</script>
+<div>
+	<span>Turn: </span>
+	<span id="turn">1</span>
+</div>
+<div id="counted">
+</div>
+</body>
+</html>

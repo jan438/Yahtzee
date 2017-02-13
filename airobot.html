@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/hashmap.min.js"></script>
+<script type="text/javascript" src="js/sinon-1.17.2.js"></script>
+<title>Yahtzee AI</title>
+<link href="css/AI.css" type="text/css" rel="stylesheet" media="screen, projection" />
+<link href="css/sitemenu.css" type="text/css" rel="stylesheet" media="screen, projection" />
+</head>
+<body>
+<nav id="navairobot"></nav>
+<h1>Yahtzee AI Robot</h1>
+<p id="__results">Keep rolling.</p>
+<script id="d5" type="text/javascript" src="js/d5.js"></script>
+<script id="AI" type="text/javascript" src="js/AIrobot.js"></script>
+<div>
+	<span>Turn: </span>
+	<span id="turn">1</span>
+</div>
+<div>
+	<span>Player: </span>
+	<span id="player">1</span>
+</div>
+<div>
+	<span>Choosen AI categories: </span>
+	<span id="choosen_categories"></span>
+</div>
+<div>
+	<table class="table table-bordered">
+	<tr>
+		<td class="choice"></td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td class="score">AI Robot</td>
+	</tr>
+	<tr>
+		<td class="choice">ONE</td><td class="chkbx"><input type="checkbox" id="chkAIone" onclick="return false" /></td><td id="scoreAIone" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">TWO</td><td class="chkbx"><input type="checkbox" id="chkAItwo" onclick="return false" /></td><td id="scoreAItwo" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">THREE</td><td class="chkbx"><input type="checkbox" id="chkAIthree" onclick="return false" /></td><td id="scoreAIthree" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">FOUR</td><td class="chkbx"><input type="checkbox" id="chkAIfour" onclick="return false" /></td><td id="scoreAIfour" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">FIVE</td><td class="chkbx"><input type="checkbox" id="chkAIfive" onclick="return false" /></td><td id="scoreAIfive" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">SIX</td><td class="chkbx"><input type="checkbox" id="chkAIsix" onclick="return false" /></td><td id="scoreAIsix" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="gridtotal">SCORE</td><td class="chkbx"><input type="checkbox" id="chkAIupperscore" onclick="return false" /></td><td id="scoreAI1upperscore" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="choice">BONUS</td><td class="chkbx"><input type="checkbox" id="chkAIupperbonus" onclick="return false" /></td><td id="scoreAIupperbonus"  class="total">0</td>
+	</tr>
+	<tr>
+		<td class="gridtotal">TOTAL</td><td class="chkbx"><input type="checkbox" id="chkAIuppertotal" onclick="return false" /></td><td id="scoreAI2uppertotal" class="total">0</td>
+	</tr>
+	</table>
+</div>
+<div>
+	<table class="table table-bordered">
+	<tr>
+		<td class="choice">THREE OF A KIND</td><td class="chkbx"><input type="checkbox" id="chkAIthreeofakind" onclick="return false" /></td><td id="scoreAIthreeofakind" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">CARRE</td><td class="chkbx"><input type="checkbox" id="chkAIcarre" onclick="return false" /></td><td id="scoreAIcarre" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">FULL HOUSE</td><td class="chkbx"><input type="checkbox" id="chkAIfull" onclick="return false" /></td><td id="scoreAIfull" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">SMALL STRAIGHT</td><td class="chkbx"><input type="checkbox" id="chkAIsmallstr" onclick="return false" /></td><td id="scoreAIsmallstr" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">LARGE STRAIGHT</td><td class="chkbx"><input type="checkbox" id="chkAIlargestr" onclick="return false" /></td><td id="scoreAIlargestr" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">YAHTZEE</td><td class="chkbx"><input type="checkbox" id="chkAIyahtzee" onclick="return false" /></td><td id="scoreAIyahtzee" class="score">0</td></tr>
+	<tr>
+		<td class="choice">CHANCE</td><td class="chkbx"><input type="checkbox" id="chkAIchance" onclick="return false" /></td><td id="scoreAIchance" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="gridtotal">SCORE</td><td class="chkbx"><input type="checkbox" id="chkAIlowertotal" onclick="return false" /></td><td id="scoreAI1lowertotal" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="choice">YAHTZEE BONUS</td><td class="chkbx"><input type="checkbox" id="chkAIyahtzeebonus" onclick="return false" /></td><td id="scoreAIyahtzeebonus" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="gridtotal">TOTAL</td><td class="chkbx"><input type="checkbox" id="chkAIlowertotal" onclick="return false" /></td><td id="scoreAI2lowertotal" class="total">0</td>
+	</tr>
+
+	</table>
+</div>
+<input type="submit" value="Score" id="score" onclick="YAHTZEE.scoreResults();" />
+<div id="scorePanel">
+	<table class="table table-bordered">
+	<tr>
+		<td class="endtotal">UPPER GRID SCORE</td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td id="scoreAIupper" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="endtotal">BONUS</td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td id="scoreAIbonus" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="endtotal">LOWER GRID SCORE</td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td id="scoreAIlower" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="endtotal"><b>GRAND TOTAL</b></td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td id="scoreAItotal" class="total">0</td>
+	</tr>
+	</table>
+</div>
+<script src="airobot.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+	$("p").hide();
+	$("#sorted").hide();
+	$("#aidicebutton").hide();
+	setTimeout(function () { $("#aidicebutton").trigger('click'); }, 5000);
+	$("#urls").hide();
+	$("#dicebutton").css("color", "green");
+	$("#choosen_categories").html("false,false,false,false,false,false,false,false,false,false,false,false,false");
+	$(".die").click(function(evt) {
+		var currentPlayer = parseInt($("#player").text(),10);
+		var currentTurn = parseInt($("#turn").text(),10);
+		if( $(this).hasClass("selected") ) {
+			if (currentPlayer == 0) {
+				$(this).removeClass("selected");
+			}
+		}
+		else {
+			if ((currentPlayer == 0) && (currentTurn > 1)) {
+				$(this).addClass("selected");
+			}
+		}
+	});
+	$("#score").css("color", "red");
+	$("#score").prop("disabled", true);
+	YahtzeeAI.scoreuppergrid = 0;
+	YahtzeeAI.scorelowergrid = 0;
+	YahtzeeAI.bonusuppergrid = 0;
+	YahtzeeAI.bonuslowergrid = 0;
+	YahtzeeAI.countyahtzee = 0;
+});
+</script>
+</body>
+</html> 

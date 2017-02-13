@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Yahtzee</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+	<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="js/sweetalert.min.js"></script>
+	<script type="text/javascript" src="js/hashmap.min.js"></script>
+	<script type="text/javascript" src="js/sinon-1.17.2.js"></script>
+	<link href="css/yahtzee.css" type="text/css" rel="stylesheet" media="screen, projection" />
+	<link href="css/yahtzeemenu.css" type="text/css" rel="stylesheet" media="screen, projection" />
+	<link href="css/sweetalert.css" rel="stylesheet">
+</head>
+<body>
+<nav id="navyahtzee"></nav>
+<h1>Yahtzee</h1>
+<p id="__results">Keep rolling.</p>
+<script type="text/javascript" src="js/d6.js"></script>
+<script type="text/javascript" src="js/yahtzee.js"></script>
+<script type="text/javascript" src="yahtzee.js"></script>
+<div>
+	<span>Turn: </span>
+	<span id="turn">1</span>
+</div>
+<div>
+	<table class="table table-bordered">
+	<tr>
+		<td class="choice">ONE</td><td class="chkbx"><input type="checkbox" id="chk1one" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2one"/></td><td id="scoreone" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">TWO</td><td class="chkbx"><input type="checkbox" id="chk1two" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2two"/></td><td id="scoretwo" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">THREE</td><td class="chkbx"><input type="checkbox" id="chk1three" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2three"/></td><td id="scorethree" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">FOUR</td><td class="chkbx"><input type="checkbox" id="chk1four" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2four"/></td><td id="scorefour" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">FIVE</td><td class="chkbx"><input type="checkbox" id="chk1five" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2five"/></td><td id="scorefive" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">SIX</td><td class="chkbx"><input type="checkbox" id="chk1six" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2six"/></td><td id="scoresix" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="total">SCORE</td><td class="chkbx"><input type="checkbox" id="chk1upper1total" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2upper1total" onclick="return false" /></td><td id="scoreupper1total"  class="total">0</td>
+	</tr>
+	<tr>
+		<td class="choice">BONUS</td><td class="chkbx"><input type="checkbox" id="chk1upperbonus" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2upperbonus" onclick="return false" /></td><td id="scoreupperbonus"  class="total">0</td>
+	</tr>
+	<tr>
+		<td class="total">TOTAL</td><td class="chkbx"><input type="checkbox" id="chk1upper2total" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2upper2total" onclick="return false" /></td><td id="scoreupper2total"  class="total">0</td>
+	</tr>
+	</table>
+</div>
+<div>
+	<table class="table table-bordered">
+	<tr>
+		<td class="choice">THREE OF A KIND</td><td class="chkbx"><input type="checkbox" id="chk1threeofakind" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2threeofakind"/></td><td id="scorethreeofakind" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">CARRE</td><td class="chkbx"><input type="checkbox" id="chk1carre" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2carre"/></td><td id="scorecarre" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">FULL HOUSE</td><td class="chkbx"><input type="checkbox" id="chk1full" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2full"/></td><td id="scorefull" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">SMALL STRAIGHT</td><td class="chkbx"><input type="checkbox" id="chk1smallstr" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2smallstr"/></td><td id="scoresmallstr" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">LARGE STRAIGHT</td><td class="chkbx"><input type="checkbox" id="chk1largestr" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2largestr"/></td><td id="scorelargestr" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">YAHTZEE</td><td class="chkbx"><input type="checkbox" id="chk1yahtzee" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2yahtzee"/></td><td id="scoreyahtzee" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="choice">CHANCE</td><td class="chkbx"><input type="checkbox" id="chk1chance" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2chance"/></td><td id="scorechance" class="score">0</td>
+	</tr>
+	<tr>
+		<td class="total">SCORE</td><td class="chkbx"><input type="checkbox" id="chk1lower1total" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2lower1total" onclick="return false" /></td><td id="scorelower1total"  class="total">0</td>
+	</tr>
+	<tr>
+		<td class="total">YAHTZEE BONUS</td><td class="chkbx"><input type="checkbox" id="chk1yahtzeebonus" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2yahtzeebonus" onclick="return false" /></td><td id="scoreyahtzeebonus" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="total">TOTAL</td><td class="chkbx"><input type="checkbox" id="chk1lower2total" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2lower2total" onclick="return false" /></td><td id="scorelower2total"  class="total">0</td>
+	</tr>
+
+	</table>
+</div>
+<div id="scorePanel">
+	<table class="table table-bordered">
+	<tr>
+		<td class="total">UPPER GRID SCORE</td><td class="chkbx"><input type="checkbox" id="chk1scoreupper" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2scoreupper" onclick="return false"></td><td id="scoreupper" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="total">BONUS</td><td class="chkbx"><input type="checkbox" id="chk1scorebonus" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2scorebonus" onclick="return false"></td><td id="scorebonus" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="total">LOWER GRID SCORE</td><td class="chkbx"><input type="checkbox" id="chk1scorelower" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2scorelower" onclick="return false"></td><td id="scorelower" class="total">0</td>
+	</tr>
+	<tr>
+		<td class="total"><b>GRAND TOTAL</b></td><td class="chkbx"><input type="checkbox" id="chk1scoretotal" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2scoretotal" onclick="return false"></td><td id="scoretotal" class="total">0</td>
+	</tr>
+	</table>
+</div>
+<div id="sorted">
+</div>
+<div id="urls">
+</div>
+<script type="text/javascript">
+$(document).ready(function () {
+	var previousselection = "";
+	$("p").hide();
+	$("#sorted").hide();
+	$("#urls").hide();
+	$("#dicebutton").css("color", "green");
+	$(".die").click(function(evt) {
+		if( $(this).hasClass("selected") ) {
+			$(this).removeClass("selected");
+		}
+		else {
+			var currentTurn = parseInt($("#turn").text(),10);
+			if (currentTurn > 1) {
+				$(this).addClass("selected");
+			}
+		}
+	});
+	$("input[type='checkbox']").change(function() {
+		if ($(this).is(":checked")) {
+			var strid = $(this).attr('id');
+			if (previousselection.length > 0 && strid != previousselection) {
+				$("#" + previousselection).prop('checked', false);
+			}
+			previousselection = strid;
+			$("#score").css("color", "green");
+			$("#score").prop("disabled", false);
+		}
+		else {
+			$("#score").css("color", "orange");
+			$("#score").prop("disabled", true);
+		}
+	});
+	$("#score").css("color", "red");
+	$("#score").prop("disabled", true);
+	$("#chk1one").prop("disabled", true);
+	$("#chk1two").prop("disabled", true);
+	$("#chk1three").prop("disabled", true);
+	$("#chk1four").prop("disabled", true);
+	$("#chk1five").prop("disabled", true);
+	$("#chk1six").prop("disabled", true);
+	$("#chk1threeofakind").prop("disabled", true);
+	$("#chk1carre").prop("disabled", true);
+	$("#chk1full").prop("disabled", true);
+	$("#chk1smallstr").prop("disabled", true);
+	$("#chk1largestr").prop("disabled", true);
+	$("#chk1yahtzee").prop("disabled", true);
+	$("#chk1chance").prop("disabled", true);
+	$("#chk2one").prop("disabled", true);
+	$("#chk2two").prop("disabled", true);
+	$("#chk2three").prop("disabled", true);
+	$("#chk2four").prop("disabled", true);
+	$("#chk2five").prop("disabled", true);
+	$("#chk2six").prop("disabled", true);
+	$("#chk2threeofakind").prop("disabled", true);
+	$("#chk2carre").prop("disabled", true);
+	$("#chk2full").prop("disabled", true);
+	$("#chk2smallstr").prop("disabled", true);
+	$("#chk2largestr").prop("disabled", true);
+	$("#chk2yahtzee").prop("disabled", true);
+	$("#chk2chance").prop("disabled", true);
+	$("#chk1upper1total").prop("disabled", true);
+	$("#chk2upper1total").prop("disabled", true);
+	$("#chk1upperbonus").prop("disabled", true);
+	$("#chk2upperbonus").prop("disabled", true);
+	$("#chk1upper2total").prop("disabled", true);
+	$("#chk2upper2total").prop("disabled", true);
+	$("#chk1lower1total").prop("disabled", true);
+	$("#chk2lower1total").prop("disabled", true);
+	$("#chk1yahtzeebonus").prop("disabled", true);
+	$("#chk2yahtzeebonus").prop("disabled", true);
+	$("#chk1lower2total").prop("disabled", true);
+	$("#chk2lower2total").prop("disabled", true);
+	$("#chk1yahtzeebonus").prop("disabled", true);
+	$("#chk2yahtzeebonus").prop("disabled", true);
+	$("#chk1lower2total").prop("disabled", true);
+	$("#chk2lower2total").prop("disabled", true);
+	$("#chk1scoreupper").prop("disabled", true);
+	$("#chk2scoreupper").prop("disabled", true);
+	$("#chk1scorebonus").prop("disabled", true);
+	$("#chk2scorebonus").prop("disabled", true);
+	$("#chk1scorelower").prop("disabled", true);
+	$("#chk2scorelower").prop("disabled", true);
+	$("#chk1scoretotal").prop("disabled", true);
+	$("#chk2scoretotal").prop("disabled", true);
+	Yahtzee.scoreuppergrid = 0;
+	Yahtzee.scorelowergrid = 0;
+	Yahtzee.bonusuppergrid = 0;
+	Yahtzee.bonuslowergrid = 0;
+	Yahtzee.countyahtzee = 0;
+});
+</script>
+</body>
+</html>

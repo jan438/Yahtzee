@@ -1,0 +1,142 @@
+@font-face {
+    font-family: "Alice Regular";
+    src: url(../../fonts/Alice-Regular.ttf) format("truetype");
+}
+.die.selected {
+	background-image: url('../dieselected.gif');
+}
+#die0.selected {
+	background-image: url('../dieselected.gif');
+}
+#die1.selected {
+	background-image: url('../dieselected.gif');
+}
+#die2.selected {
+	background-image: url('../dieselected.gif');
+}
+#die3.selected {
+	background-image: url('../dieselected.gif');
+}
+#die4.selected {
+	background-image: url('../dieselected.gif');
+}
+#die5.selected {
+	background-image: url('../dieselected.gif');
+}
+#die6.selected {
+	background-image: url('../dieselected.gif');
+}
+#die7.selected {
+	background-image: url('../dieselected.gif');
+}
+#die8.selected {
+	background-image: url('../dieselected.gif');
+}
+#die9.selected {
+	background-image: url('../dieselected.gif');
+}
+table, th, td {
+	border: 1px solid black;
+
+}
+table td.score {
+	width: 100px;
+}
+table td.total {
+	width: 100px;
+}
+table td.choice {
+	width: 200px;
+}
+table td.gridtotal {
+	width: 200px;
+}
+table td.endtotal {
+	width: 200px;
+}
+table td.chkbx {
+	width: 20px;
+}
+.score {
+	font-family: "Alice Regular", cursive;
+	color: blue;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+.choice {
+	font-family: "Alice Regular", cursive;
+	color: blueviolet;
+	background-color: antiquewhite;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+.total {
+	font-family: "Alice Regular", cursive;
+	color: darkgreen;
+	background-color: darkseagreen;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+.endtotal {
+	font-family: "Alice Regular", cursive;
+	color: darkgreen;
+	background-color: darkseagreen;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+.gridtotal {
+	font-family: "Alice Regular", cursive;
+	color: darkgreen;
+	background-color: darkseagreen;
+	font-size: 1em;
+	font-weight: bold;
+	text-align: center;
+}
+td.highlight {
+	background-color: #FFA07A;
+}
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-top: 0.67em;
+    margin-bottom: 0.67em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+.diceGroup h4 {
+    display: inline;
+    font-size: 1em;
+}
+div#idhumandices h4 {
+    display: inline;
+    font-size: 1em;
+}
+div#idaidices h4 {
+    display: inline;
+    font-size: 1em;
+}
+h4#idhumanheader {
+    font-size: 1em;
+    color: blue;
+}
+h4#idaiheader {
+    font-size: 1em;
+    color: blue;
+}
+#diceform {
+  display: inline-block;
+}
+div#diceinputs {
+   margin-bottom: 0.25em;
+}
+h4#swalhumanover {
+   color: darkgreen;
+}
+h4#swalaiover {
+   color: darkgreen;
+}
