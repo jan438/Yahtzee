@@ -150,31 +150,20 @@ $(document).ready(function () {
 		}
 	});
 	$("input[type='checkbox']").change(function() {
-		if ($(this).is(":checked")) {
-			var strid = $(this).attr('id');
-			if (previousselection.length > 0 && strid != previousselection) {
-				$("#" + previousselection).prop('checked', false);
-			}
-			previousselection = strid;
-		}
-		else {
-			var count = 0;
-			if ($('#chk1one').is(":checked")) count++;
-			if ($('#chk1two').is(":checked")) count++;
-			if ($('#chk1three').is(":checked")) count++;
-			if ($('#chk1four').is(":checked")) count++;
-			if ($('#chk1five').is(":checked")) count++;
-			if ($('#chk1six').is(":checked")) count++;
-			if ($('#chk1threeofakind').is(":checked")) count++;
-			if ($('#chk1carre').is(":checked")) count++;
-			if ($('#chk1full').is(":checked")) count++;
-			if ($('#chk1smallstr').is(":checked")) count++;
-			if ($('#chk1largestr').is(":checked")) count++;
-			if ($('#chk1yahtzee').is(":checked")) count++;
-			if ($('#chk1chance').is(":checked")) count++;
-			if (count == 1) {
+		var scorecolor = $("#score").css("color");
+		if (scorecolor != "rgb(255, 0, 0)") {
+			if ($(this).is(":checked")) {
 				var strid = $(this).attr('id');
-				$("#" + strid).prop('checked', true);
+				if (previousselection.length > 0 && strid != previousselection) {
+					$("#" + previousselection).prop('checked', false);
+				}
+				previousselection = strid;
+				$("#score").css("color", "green");
+				$("#score").prop("disabled", false);
+			}
+			else {
+				$("#score").css("color", "orange");
+				$("#score").prop("disabled", true);
 			}
 		}
 	});

@@ -554,7 +554,7 @@ YAHTZEE.callback = function(total, info, results) {
 			$("#turn").html(Yahtzee.turn);
 			$("#player").html(player);
 			$("#score").css("color", "orange");
-			$("#score").prop("disabled", false);
+			$("#score").prop("disabled", true);
 		}
 	}
 }
@@ -688,7 +688,7 @@ YAHTZEE.scoreResults = function() {
 	if (Yahtzee.gameover && !YahtzeeAI.gameover) {
 		Yahtzee.turn = 1;
 		player = 1;
-		$("#score").css("color", "red");
+		$("#score").css("color", "orange");
 		$("#score").prop("disabled", true);
 		setTimeout(function () { $("#aidicebutton").trigger('click'); }, 5000);
 	}
@@ -698,7 +698,7 @@ YAHTZEE.scoreResults = function() {
 		$("#dicebutton").css("color", "green");
 		$("#dicebutton").prop("disabled", false);
 		$("#score").css("color", "orange");
-		$("#score").prop("disabled", false);
+		$("#score").prop("disabled", true);
 	}
 	if (Yahtzee.gameover && YahtzeeAI.gameover) {
 		$("#score").css("color", "red");
@@ -892,7 +892,7 @@ YAHTZEE.humanscoreResults = function() {
 		if (Yahtzee.disabled > 12) {
 			if (YahtzeeAI.gameover) {
 				$("#score").css("color", "orange");
-				$("#score").prop("disabled", false);
+				$("#score").prop("disabled", true);
 			}
 			Yahtzee.gameover = true;
 			swal({
