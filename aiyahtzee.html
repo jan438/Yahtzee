@@ -33,7 +33,7 @@
 <div>
 	<table class="table table-bordered">
 	<tr>
-		<td class="choice"></td><td class="chkbx"><input type="checkbox" onclick="return false" /></td><td class="chkbx"><input type="checkbox" onclick="return false"></td><td class="score">Human</td><td class="chkbx"><input type="checkbox" onclick="return false"></td><td class="score">AI</td>
+		<td class="choice"></td><td class="chkbx"><input type="checkbox" id="chk10" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk20" onclick="return false"></td><td class="score">Human</td><td class="chkbx"><input type="checkbox" id="chkAI0" onclick="return false"></td><td class="score">AI</td>
 	</tr>
 	<tr>
 		<td class="choice">ONE</td><td class="chkbx"><input type="checkbox" id="chk1one" onclick="return false" /></td><td class="chkbx"><input type="checkbox" id="chk2one" /></td><td id="scoreone" class="score">0</td><td class="chkbx"><input type="checkbox" id="chkAIone" onclick="return false" /></td><td id="scoreAIone" class="score">0</td>
@@ -180,6 +180,9 @@ $(document).ready(function () {
 	});
 	$("#score").css("color", "red");
 	$("#score").prop("disabled", true);
+	$("#chk10").prop("disabled", true);
+	$("#chk20").prop("disabled", true);
+	$("#chkAI0").prop("disabled", true);
 	$("#chk1one").prop("disabled", true);
 	$("#chk2one").prop("disabled", true);
 	$("#chkAIone").prop("disabled", true);
