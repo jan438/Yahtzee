@@ -332,44 +332,58 @@ YAHTZEE.callback = function(total, info, results) {
 			}
 		}
 		else {
+			var humanoptions = 0;
 			if (Yahtzee.ones && !$('#chk1one').parent().hasClass('highlight')) {
 				$("#chk2one").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.twos && !$('#chk1two').parent().hasClass('highlight')) {
 				$("#chk2two").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.threes && !$('#chk1three').parent().hasClass('highlight')) {
 				$("#chk2three").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.fours && !$('#chk1four').parent().hasClass('highlight')) {
 				$("#chk2four").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.fives && !$('#chk1five').parent().hasClass('highlight')) {
 				$("#chk2five").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.sixes && !$('#chk1six').parent().hasClass('highlight')) {
 				$("#chk2six").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.three_of_a_kind && !$('#chk1threeofakind').parent().hasClass('highlight')) {
 				$("#chk2threeofakind").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.four_of_a_kind && !$('#chk1carre').parent().hasClass('highlight')) {
 				$("#chk2carre").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.yahtzee && !$('#chk1yahtzee').parent().hasClass('highlight')) {
 				$("#chk2yahtzee").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.small_straight && !$('#chk1smallstr').parent().hasClass('highlight')) {
 				$("#chk2smallstr").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.large_straight && !$('#chk1largestr').parent().hasClass('highlight')) {
 				$("#chk2largestr").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.full_house && !$('#chk1full').parent().hasClass('highlight')) {
 				$("#chk2full").prop("disabled", false);
+				humanoptions++;
 			}
 			if (Yahtzee.chance && !$('#chk1chance').parent().hasClass('highlight')) {
 				$("#chk2chance").prop("disabled", false);
+				humanoptions++;
 			}
 			$("#aidice1").removeClass("selected");
 			$("#aidice2").removeClass("selected");
@@ -581,6 +595,7 @@ YAHTZEE.callback = function(total, info, results) {
 			$("#player").html(player);
 			$("#score").css("color", "orange");
 			$("#score").prop("disabled", true);
+			if (humanoptions === 0) setTimeout(function () { $("#score").trigger('click'); }, 5000);
 		}
 	}
 }
