@@ -239,55 +239,42 @@ YAHTZEE.callback = function(total, info, results) {
 			}
 			if (Yahtzee.ones && !$('#chk1one').parent().hasClass('highlight')) {
 				$('#chk1one').prop('checked', Yahtzee.ones);
-				$("#chk2one").prop("disabled", false);
 			}
 			if (Yahtzee.twos && !$('#chk1two').parent().hasClass('highlight')) {
 				$('#chk1two').prop('checked', Yahtzee.twos);
-				$("#chk2two").prop("disabled", false);
 			}
 			if (Yahtzee.threes && !$('#chk1three').parent().hasClass('highlight')) {
 				$('#chk1three').prop('checked', Yahtzee.threes);
-				$("#chk2three").prop("disabled", false);
 			}
 			if (Yahtzee.fours && !$('#chk1four').parent().hasClass('highlight')) {
 				$('#chk1four').prop('checked', Yahtzee.fours);
-				$("#chk2four").prop("disabled", false);
 			}
 			if (Yahtzee.fives && !$('#chk1five').parent().hasClass('highlight')) {
 				$('#chk1five').prop('checked', Yahtzee.fives);
-				$("#chk2five").prop("disabled", false);
 			}
 			if (Yahtzee.sixes && !$('#chk1six').parent().hasClass('highlight')) {
 				$('#chk1six').prop('checked', Yahtzee.sixes);
-				$("#chk2six").prop("disabled", false);
 			}
 			if (Yahtzee.three_of_a_kind && !$('#chk1threeofakind').parent().hasClass('highlight')) {
 				$('#chk1threeofakind').prop('checked', Yahtzee.three_of_a_kind);
-				$("#chk2threeofakind").prop("disabled", false);
 			}
 			if (Yahtzee.four_of_a_kind && !$('#chk1carre').parent().hasClass('highlight')) {
 				$('#chk1carre').prop('checked', Yahtzee.four_of_a_kind);
-				$("#chk2carre").prop("disabled", false);
 			}
 			if (Yahtzee.yahtzee && !$('#chk1yahtzee').parent().hasClass('highlight')) {
 				$('#chk1yahtzee').prop('checked', Yahtzee.yahtzee);
-				$("#chk2yahtzee").prop("disabled", false);
 			}
 			if (Yahtzee.small_straight && !$('#chk1smallstr').parent().hasClass('highlight')) {
 				$('#chk1smallstr').prop('checked', Yahtzee.small_straight);
-				$("#chk2smallstr").prop("disabled", false);
 			}
 			if (Yahtzee.large_straight && !$('#chk1largestr').parent().hasClass('highlight')) {
 				$('#chk1largestr').prop('checked', Yahtzee.large_straight);
-				$("#chk2largestr").prop("disabled", false);
 			}
 			if (Yahtzee.full_house && !$('#chk1full').parent().hasClass('highlight')) {
 				$('#chk1full').prop('checked', Yahtzee.full_house);
-				$("#chk2full").prop("disabled", false);
 			}
 			if (Yahtzee.chance && !$('#chk1chance').parent().hasClass('highlight')) {
 				$('#chk1chance').prop('checked', Yahtzee.chance);
-				$("#chk2chance").prop("disabled", false);
 			}
 			Yahtzee.turn = 1;
 			player = 1;
@@ -345,6 +332,45 @@ YAHTZEE.callback = function(total, info, results) {
 			}
 		}
 		else {
+			if (Yahtzee.ones && !$('#chk1one').parent().hasClass('highlight')) {
+				$("#chk2one").prop("disabled", false);
+			}
+			if (Yahtzee.twos && !$('#chk1two').parent().hasClass('highlight')) {
+				$("#chk2two").prop("disabled", false);
+			}
+			if (Yahtzee.threes && !$('#chk1three').parent().hasClass('highlight')) {
+				$("#chk2three").prop("disabled", false);
+			}
+			if (Yahtzee.fours && !$('#chk1four').parent().hasClass('highlight')) {
+				$("#chk2four").prop("disabled", false);
+			}
+			if (Yahtzee.fives && !$('#chk1five').parent().hasClass('highlight')) {
+				$("#chk2five").prop("disabled", false);
+			}
+			if (Yahtzee.sixes && !$('#chk1six').parent().hasClass('highlight')) {
+				$("#chk2six").prop("disabled", false);
+			}
+			if (Yahtzee.three_of_a_kind && !$('#chk1threeofakind').parent().hasClass('highlight')) {
+				$("#chk2threeofakind").prop("disabled", false);
+			}
+			if (Yahtzee.four_of_a_kind && !$('#chk1carre').parent().hasClass('highlight')) {
+				$("#chk2carre").prop("disabled", false);
+			}
+			if (Yahtzee.yahtzee && !$('#chk1yahtzee').parent().hasClass('highlight')) {
+				$("#chk2yahtzee").prop("disabled", false);
+			}
+			if (Yahtzee.small_straight && !$('#chk1smallstr').parent().hasClass('highlight')) {
+				$("#chk2smallstr").prop("disabled", false);
+			}
+			if (Yahtzee.large_straight && !$('#chk1largestr').parent().hasClass('highlight')) {
+				$("#chk2largestr").prop("disabled", false);
+			}
+			if (Yahtzee.full_house && !$('#chk1full').parent().hasClass('highlight')) {
+				$("#chk2full").prop("disabled", false);
+			}
+			if (Yahtzee.chance && !$('#chk1chance').parent().hasClass('highlight')) {
+				$("#chk2chance").prop("disabled", false);
+			}
 			$("#aidice1").removeClass("selected");
 			$("#aidice2").removeClass("selected");
 			$("#aidice3").removeClass("selected");
