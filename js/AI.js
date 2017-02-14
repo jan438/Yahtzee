@@ -281,6 +281,47 @@ YAHTZEE.callback = function(total, info, results) {
 			if (!YahtzeeAI.gameover) {
 				setTimeout(function () { $("#aidicebutton").trigger('click'); }, 5000);
 			}
+			else {
+				if (Yahtzee.ones && !$('#chk1one').parent().hasClass('highlight')) {
+					$("#chk2one").prop("disabled", false);
+				}
+				if (Yahtzee.twos && !$('#chk1two').parent().hasClass('highlight')) {
+					$("#chk2two").prop("disabled", false);
+				}
+				if (Yahtzee.threes && !$('#chk1three').parent().hasClass('highlight')) {
+					$("#chk2three").prop("disabled", false);
+				}
+				if (Yahtzee.fours && !$('#chk1four').parent().hasClass('highlight')) {
+					$("#chk2four").prop("disabled", false);
+				}
+				if (Yahtzee.fives && !$('#chk1five').parent().hasClass('highlight')) {
+					$("#chk2five").prop("disabled", false);
+				}
+				if (Yahtzee.sixes && !$('#chk1six').parent().hasClass('highlight')) {
+					$("#chk2six").prop("disabled", false);
+				}
+				if (Yahtzee.three_of_a_kind && !$('#chk1threeofakind').parent().hasClass('highlight')) {
+					$("#chk2threeofakind").prop("disabled", false);
+				}
+				if (Yahtzee.four_of_a_kind && !$('#chk1carre').parent().hasClass('highlight')) {
+					$("#chk2carre").prop("disabled", false);
+				}
+				if (Yahtzee.yahtzee && !$('#chk1yahtzee').parent().hasClass('highlight')) {
+					$("#chk2yahtzee").prop("disabled", false);
+				}
+				if (Yahtzee.small_straight && !$('#chk1smallstr').parent().hasClass('highlight')) {
+					$("#chk2smallstr").prop("disabled", false);
+				}
+				if (Yahtzee.large_straight && !$('#chk1largestr').parent().hasClass('highlight')) {
+					$("#chk2largestr").prop("disabled", false);
+				}
+				if (Yahtzee.full_house && !$('#chk1full').parent().hasClass('highlight')) {
+					$("#chk2full").prop("disabled", false);
+				}
+				if (Yahtzee.chance && !$('#chk1chance').parent().hasClass('highlight')) {
+					$("#chk2chance").prop("disabled", false);
+				}
+			}
 		}
 		$("#turn").html(Yahtzee.turn);
 		$("#player").html(player);
