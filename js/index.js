@@ -239,8 +239,8 @@ callback = function() {
 		$(die9).removeClass("selected");
 		$("#dicebutton").css("color", "red");
 		$("#dicebutton").prop("disabled", true);
-		$("#dicescore").css("color", "green");
-		$("#dicescore").prop("disabled", false);
+		$("#dicescore").css("color", "orange");
+		$("#dicescore").prop("disabled", true);
 		Yahtzee.ones = false;
 		Yahtzee.twos = false;
 		Yahtzee.threes = false;
