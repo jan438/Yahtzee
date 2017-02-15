@@ -199,7 +199,7 @@ $(document).ready(function () {
 	$("[id^=chkAI]").prop("disabled", true);
 	$("[id^=chk1]").prop("checked", false);
 	$("input[type='checkbox']").change(function() {
-		var scorecolor = $("#score").css("color");
+		var scorecolor = $("#dicescore").css("color");
 		if (scorecolor != "rgb(255, 0, 0)") {
 			if ($(this).is(":checked")) {
 				var strid = $(this).attr('id');
