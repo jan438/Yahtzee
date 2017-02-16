@@ -609,11 +609,10 @@ callback = function() {
 }
 
 YAHTZEE.scoreResults = function() {
-	var validscore = true;
 	if (!Yahtzee.gameover) {
-		validscore = YAHTZEE.humanscoreResults();
+		YAHTZEE.humanscoreResults();
 	}
-	if (validscore && !YahtzeeAI.gameover) {
+	if (!YahtzeeAI.gameover) {
 		YAHTZEE.aiscoreResults();
 	}
 	$("#scoreupper1total").html(Yahtzee.scoreuppergrid);
@@ -632,16 +631,14 @@ YAHTZEE.scoreResults = function() {
 	$("#scoreAIbonus").html(YahtzeeAI.bonusuppergrid + YahtzeeAI.bonuslowergrid);
 	$("#scoreAIlower").html(YahtzeeAI.scorelowergrid);
 	$("#scoreAItotal").html(YahtzeeAI.scoreuppergrid + YahtzeeAI.bonusuppergrid + YahtzeeAI.bonuslowergrid + YahtzeeAI.scorelowergrid);
-	if (validscore) {
-		if (Yahtzee.gameover && !YahtzeeAI.gameover) {
-			turn = 1;
-		}
-		if (!Yahtzee.gameover && YahtzeeAI.gameover) {
-			turn = 1;
-		}
-		if (Yahtzee.gameover && YahtzeeAI.gameover) {
-			setTimeout(function(){location.reload(true);}, 10000);
-		}
+	if (Yahtzee.gameover && !YahtzeeAI.gameover) {
+		turn = 1;
+	}
+	if (!Yahtzee.gameover && YahtzeeAI.gameover) {
+		turn = 1;
+	}
+	if (Yahtzee.gameover && YahtzeeAI.gameover) {
+		setTimeout(function(){location.reload(true);}, 10000);
 	}
 }
 
@@ -838,8 +835,7 @@ YAHTZEE.humanscoreResults = function() {
 			});
 		}
 	}
-	var validscore = ((checked > 0) && !Yahtzee.gameover);
-	return validscore;
+	return;
 }
 
 YAHTZEE.aiscoreResults = function() {
@@ -953,7 +949,6 @@ YAHTZEE.aiscoreResults = function() {
 			showConfirmButton: false,
 			html: true
 		});
-
 	}
 }
 
