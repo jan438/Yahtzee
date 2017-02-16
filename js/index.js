@@ -601,6 +601,7 @@ callback = function() {
 			}
 		}
 		turn = 1;
+		if (humanoptions === 0) YAHTZEE.scoreResults();
 	}
 	$("#turn").html(turn);
 	console.log("D7AnimGroupcallback sorted results0: " + dices0);
