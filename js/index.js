@@ -772,7 +772,10 @@ YAHTZEE.humanscoreResults = function() {
 			showConfirmButton: false,
 			html: true
 		});
-		return (checked > 0);
+		$("#dicebutton").css("color", "red");
+		$("#dicebutton").prop("disabled", true);
+		setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
+		return;
 	}
 	if (checked > 0) {
 		$("[id^=chk2]").prop("disabled", true);
@@ -833,6 +836,9 @@ YAHTZEE.humanscoreResults = function() {
 				showConfirmButton: false,
 				html: true
 			});
+			$("#dicebutton").css("color", "red");
+			$("#dicebutton").prop("disabled", true);
+			setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 		}
 	}
 	return;
@@ -934,8 +940,10 @@ YAHTZEE.aiscoreResults = function() {
 	$("#scoreAI2lowertotal").html(YahtzeeAI.scorelowergrid + YahtzeeAI.bonuslowergrid);
 	if (AIchecked > 0) {
 		$("[id^=chkAI]").prop("checked", false);
-		$("#dicebutton").css("color", "green");
-		$("#dicebutton").prop("disabled", false);
+		if (!Yahtzee.gameover) {
+			$("#dicebutton").css("color", "green");
+			$("#dicebutton").prop("disabled", false);
+		}
 		$("#dicescore").css("color", "red");
 		$("#dicescore").prop("disabled", true);
 	}
