@@ -224,9 +224,9 @@ callback = function() {
 	YAHTZEE.sort_results(dices0, 0, Yahtzee.scorelowergrid + Yahtzee.scoreuppergrid);
 	YAHTZEE.sort_results(dices1, 1, Yahtzee.scorelowergrid + Yahtzee.scoreuppergrid);
 	var humanoptions = 0;
-	if (Yahtzee.gameover && !YahtzeeAI.gameover) setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 	if (turn < 3) {
 		turn = turn + 1;
+		if (Yahtzee.gameover && !YahtzeeAI.gameover) setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 	}
 	else {
 		$(die0).removeClass("selected");
