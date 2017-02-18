@@ -223,6 +223,8 @@ callback = function() {
 	var dices1 = [yahtzee.results[1][0],yahtzee.results[1][1],yahtzee.results[1][2],yahtzee.results[1][3],yahtzee.results[1][4]];
 	YAHTZEE.sort_results(dices0, 0, Yahtzee.scorelowergrid + Yahtzee.scoreuppergrid);
 	YAHTZEE.sort_results(dices1, 1, Yahtzee.scorelowergrid + Yahtzee.scoreuppergrid);
+	var humanoptions = 0;
+	if (Yahtzee.gameover && !YahtzeeAI.gameover) setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 	if (turn < 3) {
 		turn = turn + 1;
 	}
@@ -332,7 +334,6 @@ callback = function() {
 			} else if( (mask & SMALL_STRAIGHT_MASK3) == SMALL_STRAIGHT_MASK3  ) {
 				Yahtzee.small_straight = true;
 			}
-			var humanoptions = 0;
 			if (Yahtzee.ones && !$('#chk1one').parent().hasClass('highlight')) {
 				$('#chk1one').prop('checked', Yahtzee.ones);
 				$("#chk2one").prop("disabled", false);
@@ -633,6 +634,7 @@ YAHTZEE.scoreResults = function() {
 	$("#scoreAItotal").html(YahtzeeAI.scoreuppergrid + YahtzeeAI.bonusuppergrid + YahtzeeAI.bonuslowergrid + YahtzeeAI.scorelowergrid);
 	if (Yahtzee.gameover && !YahtzeeAI.gameover) {
 		turn = 1;
+		setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 	}
 	if (!Yahtzee.gameover && YahtzeeAI.gameover) {
 		turn = 1;
@@ -774,7 +776,6 @@ YAHTZEE.humanscoreResults = function() {
 		});
 		$("#dicebutton").css("color", "red");
 		$("#dicebutton").prop("disabled", true);
-		setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 		return;
 	}
 	if (checked > 0) {
@@ -838,7 +839,6 @@ YAHTZEE.humanscoreResults = function() {
 			});
 			$("#dicebutton").css("color", "red");
 			$("#dicebutton").prop("disabled", true);
-			setTimeout(function () { $("#dicebutton").trigger('click'); }, 5000);
 		}
 	}
 	return;
