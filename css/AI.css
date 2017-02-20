@@ -146,6 +146,9 @@ h4#swalaiover {
 #dicescore {
    width: 10em;
 }
+#score {
+   width: 10em;
+}
 #dicebutton:active {
    background-color: #3e8e41;
    box-shadow: 0 5px #666;
