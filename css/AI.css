@@ -140,6 +140,12 @@ h4#swalhumanover {
 h4#swalaiover {
    color: darkgreen;
 }
+#dicebutton {
+   width: 10em;
+}
+#dicescore {
+   width: 10em;
+}
 #dicebutton:active {
    background-color: #3e8e41;
    box-shadow: 0 5px #666;
