@@ -67,12 +67,12 @@ h4#swalgameover {
 #score {
    width: 10em;
 }
-#dicebutton:active {
+#dicebutton:enabled:active {
    background-color: #3e8e41;
    box-shadow: 0 5px #666;
    transform: translateY(4px);
 }
-#score:active {
+#score:enabled:active {
    background-color: #3e8e41;
    box-shadow: 0 5px #666;
    transform: translateY(4px);
