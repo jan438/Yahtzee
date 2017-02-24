@@ -188,3 +188,30 @@ input[type="checkbox"]:checked:after {
    -ms-transform: translate(-50%,-50%);
    transform: translate(-50%,-50%);
 }
+label.checkbox input[type="checkbox"] {display:none;}
+label.checkbox span {
+  display:inline-block;
+  border:2px solid #BBB;
+  border-radius:10px;
+  width:25px;
+  height:25px;
+  background:#C33;
+  vertical-align:middle;
+  margin:3px;
+  position: relative;
+  transition:width 0.1s, height 0.1s, margin 0.1s;
+}
+label.checkbox :checked + span {
+  background:#6F6;
+  width:27px;
+  height:27px;
+  margin: 2px;
+}
+label.checkbox :checked + span:after {
+  content: '\2714';
+  font-size: 20px;
+  position: absolute;
+  top: -2px;
+  left: 5px;
+  color: #99a1a7;
+}
