@@ -166,6 +166,7 @@ h4#swalaiover {
 }
 input[type="checkbox"] {
    -webkit-appearance: initial;
+   -moz-appearance: initial;
    appearance: initial;
    width: 20px;
    height: 20px;
