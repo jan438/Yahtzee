@@ -197,7 +197,7 @@ label.checkbox span {
   height:20px;
   background:#C33;
   vertical-align:middle;
-  margin:3px;
+  margin: 2px;
   position: relative;
   transition:width 0.1s, height 0.1s, margin 0.1s;
 }
