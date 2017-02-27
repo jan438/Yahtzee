@@ -188,6 +188,9 @@ input[type="checkbox"]:checked:after {
    -ms-transform: translate(-50%,-50%);
    transform: translate(-50%,-50%);
 }
+label.checkbox1.highlight {
+	background-color: #FFA07A;
+}
 label.checkbox1 input[type="checkbox"] {display:none;}
 label.checkbox1 span {
   display:inline-block;
