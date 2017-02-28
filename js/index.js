@@ -493,79 +493,79 @@ callback = function() {
 			}
 			var highestscore = 0;
 			var highestscorecategory = -1;
-			if (YahtzeeAI.ones && !$('#chkAIone').parent().hasClass('highlight')) {
+			if (YahtzeeAI.ones && !$('#chkAIone').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scoreones) {
 					highestscore = YahtzeeAI.scoreones;
 					highestscorecategory = 1;
 				}
 			}
-			if (YahtzeeAI.twos && !$('#chkAItwo').parent().hasClass('highlight')) {
+			if (YahtzeeAI.twos && !$('#chkAItwo').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scoretwos) {
 					highestscore = YahtzeeAI.scoretwos;
 					highestscorecategory = 2;
 				}
 			}
-			if (YahtzeeAI.threes && !$('#chkAIthree').parent().hasClass('highlight')) {
+			if (YahtzeeAI.threes && !$('#chkAIthree').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scorethrees) {
 					highestscore = YahtzeeAI.scorethrees;
 					highestscorecategory = 3;
 				}
 			}
-			if (YahtzeeAI.fours && !$('#chkAIfour').parent().hasClass('highlight')) {
+			if (YahtzeeAI.fours && !$('#chkAIfour').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scorefours) {
 					highestscore = YahtzeeAI.scorefours;
 					highestscorecategory = 4;
 				}
 			}
-			if (YahtzeeAI.fives && !$('#chkAIfive').parent().hasClass('highlight')) {
+			if (YahtzeeAI.fives && !$('#chkAIfive').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scorefives) {
 					highestscore = YahtzeeAI.scorefives;
 					highestscorecategory = 5;
 				}
 			}
-			if (YahtzeeAI.sixes && !$('#chkAIsix').parent().hasClass('highlight')) {
+			if (YahtzeeAI.sixes && !$('#chkAIsix').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scoresixes) {
 					highestscore = YahtzeeAI.scoresixes;
 					highestscorecategory = 6;
 				}
 			}
-			if (YahtzeeAI.three_of_a_kind && !$('#chkAIthreeofakind').parent().hasClass('highlight')) {
+			if (YahtzeeAI.three_of_a_kind && !$('#chkAIthreeofakind').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scorechance) {
 					highestscore = YahtzeeAI.scorechance;
 					highestscorecategory = 9;
 				}
 			}
-			if (YahtzeeAI.four_of_a_kind && !$('#chkAIcarre').parent().hasClass('highlight')) {
+			if (YahtzeeAI.four_of_a_kind && !$('#chkAIcarre').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scorechance) {
 					highestscore = YahtzeeAI.scorechance;
 					highestscorecategory = 10;
 				}
 			}
-			if (YahtzeeAI.yahtzee && !$('#chkAIyahtzee').parent().hasClass('highlight')) {
+			if (YahtzeeAI.yahtzee && !$('#chkAIyahtzee').parent().parent().hasClass('highlight')) {
 				if (highestscore < 50) {
 					highestscore = 50;
 					highestscorecategory = 14;
 				}
 			}
-			if (YahtzeeAI.small_straight && !$('#chkAIsmallstr').parent().hasClass('highlight')) {
+			if (YahtzeeAI.small_straight && !$('#chkAIsmallstr').parent().parent().hasClass('highlight')) {
 				if (highestscore < 30) {
 					highestscore = 30;
 					highestscorecategory = 12;
 				}
 			}
-			if (YahtzeeAI.large_straight && !$('#chkAIlargestr').parent().hasClass('highlight')) {
+			if (YahtzeeAI.large_straight && !$('#chkAIlargestr').parent().parent().hasClass('highlight')) {
 				if (highestscore < 40) {
 					highestscore = 40;
 					highestscorecategory = 13;
 				}
 			}
-			if (YahtzeeAI.full_house && !$('#chkAIfull').parent().hasClass('highlight')) {
+			if (YahtzeeAI.full_house && !$('#chkAIfull').parent().parent().hasClass('highlight')) {
 				if (highestscore < 25) {
 					highestscore = 25;
 					highestscorecategory = 11;
 				}
 			}
-			if (YahtzeeAI.chance && !$('#chkAIchance').parent().hasClass('highlight')) {
+			if (YahtzeeAI.chance && !$('#chkAIchance').parent().parent().hasClass('highlight')) {
 				if (highestscore < YahtzeeAI.scorechance) {
 					highestscore = YahtzeeAI.scorechance;
 					highestscorecategory = 15;
@@ -850,70 +850,70 @@ YAHTZEE.aiscoreResults = function() {
 		$("#scoreAIone").html(YahtzeeAI.scoreones);
 		YahtzeeAI.scoreuppergrid = YahtzeeAI.scoreuppergrid + YahtzeeAI.scoreones;
 		AIchecked++;
-		$("#chkAIone").parent().addClass("highlight");
+		$("#chkAIone").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAItwo").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAItwo").html(YahtzeeAI.scoretwos);
 		YahtzeeAI.scoreuppergrid = YahtzeeAI.scoreuppergrid + YahtzeeAI.scoretwos;
 		AIchecked++;
-		$("#chkAItwo").parent().addClass("highlight");
+		$("#chkAItwo").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIthree").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAIthree").html(YahtzeeAI.scorethrees);
 		YahtzeeAI.scoreuppergrid = YahtzeeAI.scoreuppergrid + YahtzeeAI.scorethrees;
 		AIchecked++;
-		$("#chkAIthree").parent().addClass("highlight");
+		$("#chkAIthree").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIfour").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAIfour").html(YahtzeeAI.scorefours);
 		YahtzeeAI.scoreuppergrid = YahtzeeAI.scoreuppergrid + YahtzeeAI.scorefours;
 		AIchecked++;
-		$("#chkAIfour").parent().addClass("highlight");
+		$("#chkAIfour").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIfive").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAIfive").html(YahtzeeAI.scorefives);
 		YahtzeeAI.scoreuppergrid = YahtzeeAI.scoreuppergrid + YahtzeeAI.scorefives;
 		AIchecked++;
-		$("#chkAIfive").parent().addClass("highlight");
+		$("#chkAIfive").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIsix").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAIsix").html(YahtzeeAI.scoresixes);
 		YahtzeeAI.scoreuppergrid = YahtzeeAI.scoreuppergrid + YahtzeeAI.scoresixes;
 		AIchecked++;
-		$("#chkAIsix").parent().addClass("highlight");
+		$("#chkAIsix").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIthreeofakind").is(":checked") && (AIchecked == 0)) {
 	$("#scoreAIthreeofakind").html(YahtzeeAI.scorechance);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scorechance;
 		AIchecked++;
-		$("#chkAIthreeofakind").parent().addClass("highlight");
+		$("#chkAIthreeofakind").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIcarre").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAIcarre").html(YahtzeeAI.scorechance);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scorechance;
 		AIchecked++;
-		$("#chkAIcarre").parent().addClass("highlight");
+		$("#chkAIcarre").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIfull").is(":checked") && (AIchecked == 0)) {
 		YahtzeeAI.scorefull_house = 25;
 		$("#scoreAIfull").html(YahtzeeAI.scorefull_house);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scorefull_house;
 		AIchecked++;
-		$("#chkAIfull").parent().addClass("highlight");
+		$("#chkAIfull").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIsmallstr").is(":checked") && (AIchecked == 0)) {
 		YahtzeeAI.scoresmall_straight = 30;
 		$("#scoreAIsmallstr").html(YahtzeeAI.scoresmall_straight);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scoresmall_straight;
 		AIchecked++;
-		$("#chkAIsmallstr").parent().addClass("highlight");
+		$("#chkAIsmallstr").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIlargestr").is(":checked") && (AIchecked == 0)) {
 		YahtzeeAI.scorelarge_straight = 40;
 		$("#scoreAIlargestr").html(YahtzeeAI.scorelarge_straight);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scorelarge_straight;
 		AIchecked++;
-		$("#chkAIlargestr").parent().addClass("highlight");
+		$("#chkAIlargestr").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIyahtzee").is(":checked") && (AIchecked == 0)) {
 		YahtzeeAI.countyahtzee = YahtzeeAI.countyahtzee + 1;
@@ -921,15 +921,15 @@ YAHTZEE.aiscoreResults = function() {
 		$("#scoreAIyahtzee").html(YahtzeeAI.scoreyahtzee);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scoreyahtzee;
 		AIchecked++;
-		$("#chkAIyahtzee").parent().addClass("highlight");
+		$("#chkAIyahtzee").parent().parent().addClass("highlight");
 	}
 	if ($("#chkAIchance").is(":checked") && (AIchecked == 0)) {
 		$("#scoreAIchance").html(YahtzeeAI.scorechance);
 		YahtzeeAI.scorelowergrid = YahtzeeAI.scorelowergrid + YahtzeeAI.scorechance;
 		AIchecked++;
-		$("#chkAIchance").parent().addClass("highlight");
+		$("#chkAIchance").parent().parent().addClass("highlight");
 	}
-	$("#choosen_categories").html($("#chkAIone").parent().hasClass("highlight").toString() + "," + $("#chkAItwo").parent().hasClass("highlight").toString() + "," + $("#chkAIthree").parent().hasClass("highlight").toString() + "," + $("#chkAIfour").parent().hasClass("highlight").toString() + "," + $("#chkAIfive").parent().hasClass("highlight").toString() + "," + $("#chkAIsix").parent().hasClass("highlight").toString() + "," + $("#chkAIthreeofakind").parent().hasClass("highlight").toString() + "," + $("#chkAIcarre").parent().hasClass("highlight").toString() + "," + $("#chkAIfull").parent().hasClass("highlight").toString() + "," + $("#chkAIsmallstr").parent().hasClass("highlight").toString() + "," + $("#chkAIlargestr").parent().hasClass("highlight").toString() + "," + $("#chkAIyahtzee").parent().hasClass("highlight").toString() + "," + $("#chkAIchance").parent().hasClass("highlight").toString());
+	$("#choosen_categories").html($("#chkAIone").parent().parent().hasClass("highlight").toString() + "," + $("#chkAItwo").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIthree").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIfour").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIfive").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIsix").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIthreeofakind").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIcarre").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIfull").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIsmallstr").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIlargestr").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIyahtzee").parent().parent().hasClass("highlight").toString() + "," + $("#chkAIchance").parent().parent().hasClass("highlight").toString());
 	$("#scoreAI1upperscore").html(YahtzeeAI.scoreuppergrid);
 	if (YahtzeeAI.scoreuppergrid > 62) YahtzeeAI.bonusuppergrid = 35;
 	$("#scoreAIupperbonus").html(YahtzeeAI.bonusuppergrid);
