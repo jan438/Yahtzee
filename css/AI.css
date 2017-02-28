@@ -189,7 +189,7 @@ input[type="checkbox"]:checked:after {
    transform: translate(-50%,-50%);
 }
 label.checkbox1.highlight {
-	background-color: #FFA07A;
+  background-color: #FFA07A;
 }
 label.checkbox1 input[type="checkbox"] {display:none;}
 label.checkbox1 span {
@@ -204,18 +204,18 @@ label.checkbox1 span {
   transition:width 0.1s, height 0.1s, margin 0.1s;
 }
 label.checkbox1 :checked + span {
-  background:#6F6;
+  background: blue;
   width:20px;
   height:20px;
   margin: 2px;
 }
 label.checkbox1 :checked + span:after {
-  content: '\2714';
+  content: "\2713";
+  color: #fff;
   font-size: 20px;
   position: absolute;
   top: -2px;
   left: 5px;
-  color: #99a1a7;
 }
 label.checkbox2 input[type="checkbox"] {display:none;}
 label.checkbox2 span {
