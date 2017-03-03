@@ -115,67 +115,67 @@ YAHTZEE.callback = function(total, info, results) {
 			Yahtzee.small_straight = true;
 		}
 		var optioncount = 0;
-		if (Yahtzee.ones && !$('#chk1one').parent().hasClass('highlight')) {
+		if (Yahtzee.ones && !$('#chk1one').parent().parent().hasClass('highlight')) {
 			$('#chk1one').prop('checked', Yahtzee.ones);
 			$("#chk2one").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.twos && !$('#chk1two').parent().hasClass('highlight')) {
+		if (Yahtzee.twos && !$('#chk1two').parent().parent().hasClass('highlight')) {
 			$('#chk1two').prop('checked', Yahtzee.twos);
 			$("#chk2two").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.threes && !$('#chk1three').parent().hasClass('highlight')) {
+		if (Yahtzee.threes && !$('#chk1three').parent().parent().hasClass('highlight')) {
 			$('#chk1three').prop('checked', Yahtzee.threes);
 			$("#chk2three").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.fours && !$('#chk1four').parent().hasClass('highlight')) {
+		if (Yahtzee.fours && !$('#chk1four').parent().parent().hasClass('highlight')) {
 			$('#chk1four').prop('checked', Yahtzee.fours);
 			$("#chk2four").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.fives && !$('#chk1five').parent().hasClass('highlight')) {
+		if (Yahtzee.fives && !$('#chk1five').parent().parent().hasClass('highlight')) {
 			$('#chk1five').prop('checked', Yahtzee.fives);
 			$("#chk2five").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.sixes && !$('#chk1six').parent().hasClass('highlight')) {
+		if (Yahtzee.sixes && !$('#chk1six').parent().parent().hasClass('highlight')) {
 			$('#chk1six').prop('checked', Yahtzee.sixes);
 			$("#chk2six").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.three_of_a_kind && !$('#chk1threeofakind').parent().hasClass('highlight')) {
+		if (Yahtzee.three_of_a_kind && !$('#chk1threeofakind').parent().parent().hasClass('highlight')) {
 			$('#chk1threeofakind').prop('checked', Yahtzee.three_of_a_kind);
 			$("#chk2threeofakind").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.four_of_a_kind && !$('#chk1carre').parent().hasClass('highlight')) {
+		if (Yahtzee.four_of_a_kind && !$('#chk1carre').parent().parent().hasClass('highlight')) {
 			$('#chk1carre').prop('checked', Yahtzee.four_of_a_kind);
 			$("#chk2carre").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.yahtzee && !$('#chk1yahtzee').parent().hasClass('highlight')) {
+		if (Yahtzee.yahtzee && !$('#chk1yahtzee').parent().parent().hasClass('highlight')) {
 			$('#chk1yahtzee').prop('checked', Yahtzee.yahtzee);
 			$("#chk2yahtzee").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.small_straight && !$('#chk1smallstr').parent().hasClass('highlight')) {
+		if (Yahtzee.small_straight && !$('#chk1smallstr').parent().parent().hasClass('highlight')) {
 			$('#chk1smallstr').prop('checked', Yahtzee.small_straight);
 			$("#chk2smallstr").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.large_straight && !$('#chk1largestr').parent().hasClass('highlight')) {
+		if (Yahtzee.large_straight && !$('#chk1largestr').parent().parent().hasClass('highlight')) {
 			$('#chk1largestr').prop('checked', Yahtzee.large_straight);
 			$("#chk2largestr").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.full_house && !$('#chk1full').parent().hasClass('highlight')) {
+		if (Yahtzee.full_house && !$('#chk1full').parent().parent().hasClass('highlight')) {
 			$('#chk1full').prop('checked', Yahtzee.full_house);
 			$("#chk2full").prop("disabled", false);
 			optioncount++;
 		}
-		if (Yahtzee.chance && !$('#chk1chance').parent().hasClass('highlight')) {
+		if (Yahtzee.chance && !$('#chk1chance').parent().parent().hasClass('highlight')) {
 			$('#chk1chance').prop('checked', Yahtzee.chance);
 			$("#chk2chance").prop("disabled", false);
 			optioncount++;
@@ -304,56 +304,56 @@ YAHTZEE.scoreResults = function() {
 		Yahtzee.scoreuppergrid = Yahtzee.scoreuppergrid + Yahtzee.scoreones;
 		checked++;
 		$("#chk2one").prop("checked", false);
-		$("#chk1one").parent().addClass("highlight");
+		$("#chk1one").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2two").is(":checked")) {
 		$("#scoretwo").html(Yahtzee.scoretwos);
 		Yahtzee.scoreuppergrid = Yahtzee.scoreuppergrid + Yahtzee.scoretwos;
 		checked++;
 		$("#chk2two").prop("checked", false);
-		$("#chk1two").parent().addClass("highlight");
+		$("#chk1two").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2three").is(":checked")) {
 		$("#scorethree").html(Yahtzee.scorethrees);
 		Yahtzee.scoreuppergrid = Yahtzee.scoreuppergrid + Yahtzee.scorethrees;
 		checked++;
 		$("#chk2three").prop("checked", false);
-		$("#chk1three").parent().addClass("highlight");
+		$("#chk1three").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2four").is(":checked")) {
 		$("#scorefour").html(Yahtzee.scorefours);
 		Yahtzee.scoreuppergrid = Yahtzee.scoreuppergrid + Yahtzee.scorefours;
 		checked++;
 		$("#chk2four").prop("checked", false);
-		$("#chk1four").parent().addClass("highlight");
+		$("#chk1four").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2five").is(":checked")) {
 		$("#scorefive").html(Yahtzee.scorefives);
 		Yahtzee.scoreuppergrid = Yahtzee.scoreuppergrid + Yahtzee.scorefives;
 		checked++;
 		$("#chk2five").prop("checked", false);
-		$("#chk1five").parent().addClass("highlight");
+		$("#chk1five").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2six").is(":checked")) {
 		$("#scoresix").html(Yahtzee.scoresixes);
 		Yahtzee.scoreuppergrid = Yahtzee.scoreuppergrid + Yahtzee.scoresixes;
 		checked++;
 		$("#chk2six").prop("checked", false);
-		$("#chk1six").parent().addClass("highlight");
+		$("#chk1six").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2threeofakind").is(":checked")) {
 		$("#scorethreeofakind").html(Yahtzee.scorechance);
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scorechance;
 		checked++;
 		$("#chk2threeofakind").prop("checked", false);
-		$("#chk1threeofakind").parent().addClass("highlight");
+		$("#chk1threeofakind").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2carre").is(":checked")) {
 		$("#scorecarre").html(Yahtzee.scorechance);
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scorechance;
 		checked++;
 		$("#chk2carre").prop("checked", false);
-		$("#chk1carre").parent().addClass("highlight");
+		$("#chk1carre").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2full").is(":checked")) {
 		Yahtzee.scorefull_house = 25;
@@ -361,7 +361,7 @@ YAHTZEE.scoreResults = function() {
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scorefull_house;
 		checked++;
 		$("#chk2full").prop("checked", false);
-		$("#chk1full").parent().addClass("highlight");
+		$("#chk1full").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2smallstr").is(":checked")) {
 		Yahtzee.scoresmall_straight = 30;
@@ -369,7 +369,7 @@ YAHTZEE.scoreResults = function() {
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scoresmall_straight;
 		checked++;
 		$("#chk2smallstr").prop("checked", false);
-		$("#chk1smallstr").parent().addClass("highlight");
+		$("#chk1smallstr").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2largestr").is(":checked")) {
 		Yahtzee.scorelarge_straight = 40;
@@ -377,7 +377,7 @@ YAHTZEE.scoreResults = function() {
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scorelarge_straight;
 		checked++;
 		$("#chk2largestr").prop("checked", false);
-		$("#chk1largestr").parent().addClass("highlight");
+		$("#chk1largestr").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2yahtzee").is(":checked")) {
 		Yahtzee.countyahtzee = Yahtzee.countyahtzee + 1;
@@ -386,14 +386,14 @@ YAHTZEE.scoreResults = function() {
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scoreyahtzee;
 		checked++;
 		$("#chk2yahtzee").prop("checked", false);
-		$("#chk1yahtzee").parent().addClass("highlight");
+		$("#chk1yahtzee").parent().parent().addClass("highlight");
 	}
 	if ($("#chk2chance").is(":checked")) {
 		$("#scorechance").html(Yahtzee.scorechance);
 		Yahtzee.scorelowergrid = Yahtzee.scorelowergrid + Yahtzee.scorechance;
 		checked++;
 		$("#chk2chance").prop("checked", false);
-		$("#chk1chance").parent().addClass("highlight");
+		$("#chk1chance").parent().parent().addClass("highlight");
 	}
 	if (checked > 0) $("#score").css("color", "red");
 	$("#scoreupper1total").html(Yahtzee.scoreuppergrid);
@@ -405,19 +405,19 @@ YAHTZEE.scoreResults = function() {
 	$("#scoreyahtzeebonus").html(Yahtzee.bonuslowergrid);
 	$("#scorelower2total").html(Yahtzee.scorelowergrid + Yahtzee.bonuslowergrid);
 	var count = 0;
-	if ($('#chk1one').parent().hasClass('highlight')) count++;
-	if ($('#chk1two').parent().hasClass('highlight')) count++;
-	if ($('#chk1three').parent().hasClass('highlight')) count++;
-	if ($('#chk1four').parent().hasClass('highlight')) count++;
-	if ($('#chk1five').parent().hasClass('highlight')) count++;
-	if ($('#chk1six').parent().hasClass('highlight')) count++;
-	if ($('#chk1threeofakind').parent().hasClass('highlight')) count++;
-	if ($('#chk1carre').parent().hasClass('highlight')) count++;
-	if ($('#chk1full').parent().hasClass('highlight')) count++;
-	if ($('#chk1smallstr').parent().hasClass('highlight')) count++;
-	if ($('#chk1largestr').parent().hasClass('highlight')) count++;
-	if ($('#chk1yahtzee').parent().hasClass('highlight')) count++;
-	if ($('#chk1chance').parent().hasClass('highlight')) count++;
+	if ($('#chk1one').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1two').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1three').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1four').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1five').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1six').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1threeofakind').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1carre').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1full').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1smallstr').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1largestr').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1yahtzee').parent().parent().hasClass('highlight')) count++;
+	if ($('#chk1chance').parent().parent().hasClass('highlight')) count++;
 	if ((count < 14) && (checked > 0)) {
 		$("#chk2one").prop("disabled", true);
 		$("#chk2two").prop("disabled", true);
