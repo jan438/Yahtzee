@@ -77,3 +77,59 @@ h4#swalgameover {
    box-shadow: 0 5px #666;
    transform: translateY(4px);
 }
+label.checkbox1.highlight {
+  background-color: #FFA07A;
+}
+label.checkbox1 input[type="checkbox"] {display:none;}
+label.checkbox1 span {
+  display:inline-block;
+  border: none;
+  width:20px;
+  height:20px;
+  background: gray;
+  vertical-align:middle;
+  margin: 2px;
+  position: relative;
+  transition:width 0.1s, height 0.1s, margin 0.1s;
+}
+label.checkbox1 :checked + span {
+  background: blue;
+  width:20px;
+  height:20px;
+  margin: 2px;
+}
+label.checkbox1 :checked + span:after {
+  content: "\2713";
+  color: #fff;
+  font-size: 20px;
+  position: absolute;
+  top: -2px;
+  left: 5px;
+}
+label.checkbox2 input[type="checkbox"] {display:none;}
+label.checkbox2 span {
+  display:inline-block;
+  border:2px solid #BBB;
+  border-radius:10px;
+  width:20px;
+  height:20px;
+  background:#C33;
+  vertical-align:middle;
+  margin: 2px;
+  position: relative;
+  transition:width 0.1s, height 0.1s, margin 0.1s;
+}
+label.checkbox2 :checked + span {
+  background:#6F6;
+  width:20px;
+  height:20px;
+  margin: 2px;
+}
+label.checkbox2 :checked + span:after {
+  content: '\2714';
+  font-size: 20px;
+  position: absolute;
+  top: -2px;
+  left: 5px;
+  color: #99a1a7;
+}
