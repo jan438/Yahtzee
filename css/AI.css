@@ -244,3 +244,16 @@ label.checkbox2 :checked + span:after {
   left: 5px;
   color: #99a1a7;
 }
+label.checkbox3 input[type="checkbox"] {display:none;}
+label.checkbox3 span {
+  display:inline-block;
+  border:2px solid #BBB;
+  border-radius:10px;
+  width:20px;
+  height:20px;
+  background:#ffffff;
+  vertical-align:middle;
+  margin: 2px;
+  position: relative;
+  transition:width 0.1s, height 0.1s, margin 0.1s;
+}
