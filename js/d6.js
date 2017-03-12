@@ -35,7 +35,7 @@ function D6Animator(id, baseUrl, key) {
 	}
 }
 
-D6Animator.animators = new Array();
+D6Animator.animators = [];
 
 D6Animator.get = function(id) {
 	if (D6Animator.animators[id]) return D6Animator.animators[id];
@@ -91,14 +91,14 @@ D6Animator.prototype.start = function(result) {
 	if (!targetElem) {
 		this.nope("Debug: The tag with specified id (" + this.id + ") was not found in the document.");
 	} else {
-		var sequence = new Array();
+		var sequence = [];
 		var state = "top";
 		var classlist = JSON.stringify(targetElem.classList);
 		var pos = classlist.indexOf("selected");
 		if (pos < 0) {
 			this.hold = false;
 			if (!result || result < 1 || result > 6) result = this.randomBaseOne(6);
-			var sequence = new Array();
+			var sequence = [];
 			if (this.random(2) == 1) state = "side";
 			var seqCount = this.random(3) + this.random(3) + this.random(3) + 2;
 			if (!this.useImages) seqCount += 2;
@@ -227,7 +227,7 @@ function D6AnimGroup(id, animators, isSequenced) {  // The animators argument is
 	this.isSequenced = isSequenced;
 }
 
-D6AnimGroup.animgroups = new Array();
+D6AnimGroup.animgroups = [];
 
 D6AnimGroup.get = function(id) {
 	return D6AnimGroup.animgroups[id];
@@ -235,7 +235,7 @@ D6AnimGroup.get = function(id) {
 
 D6AnimGroup.prototype.start = function(results) {
 	this.results = results;
-	this.completions = new Array();
+	this.completions = [];
 	var i;
 	for (i=0; i<this.length; ++i) {
 		var args = {'id': this.id, 'index' : i};
@@ -297,7 +297,7 @@ function D6AnimBuilder(id, results, locations, baseUrl, groupsize, interval, use
 	this.id = id;
 	D6AnimBuilder.animBuilders[id] = this;
 	this.results = results;
-	if (!locations || (typeof locations != 'object') || !locations.length) locations = new Array();
+	if (!locations || (typeof locations != 'object') || !locations.length) locations = [];
 	for (var c=locations.length; c<results.length; ++c) {
 		locations[c] = "die" + (c+1);
 	}
@@ -312,7 +312,7 @@ function D6AnimBuilder(id, results, locations, baseUrl, groupsize, interval, use
 	this.callbackData = null;
 }
 
-D6AnimBuilder.animBuilders = new Array();
+D6AnimBuilder.animBuilders = [];
 
 D6AnimBuilder.get = function(id) {
 	return D6AnimBuilder.animBuilders[id];
@@ -360,11 +360,11 @@ D6AnimBuilder.prototype.genDiceHtml = function(layout, callback, callbackData) {
 D6AnimBuilder.prototype.start = function() {
 //	console.log("D6prototype.start");
 	D6Animator.baseUrl = this.baseUrl;
-	var animGroups = new Array();
-	var resultsGroups = new Array();
+	var animGroups = [];
+	var resultsGroups = [];
 	var dieCount = 0;
-	var animators = new Array();
-	var resultsGroup = new Array();
+	var animators = [];
+	var resultsGroup = [];
 	for (var j=0; j<5; ++j) {
 		++dieCount;
 //		console.log("D6prototype.start " + this.id + dieCount);
@@ -404,7 +404,7 @@ D6.dice = function(numDice, callback, callbackData) {
 //	console.log("D6Dice");
 	D6.numDice = 5;
 	D6.numDiceShown = 5;
-	var results = new Array();
+	var results = [];
 	var i;
 	for (i=0; i<5; ++i) {
 		results[i] = 0;
@@ -433,7 +433,7 @@ D6.middleManCallback = function(middleManData) {
 	}
 	var id = middleManData.id;
 	var callbackData = middleManData.callbackData;
-	var results = new Array();
+	var results = [];
 	var resultsTotal = 0;
 	var i;
 	for (i=0; i<D6.numDiceShown; ++i) {
